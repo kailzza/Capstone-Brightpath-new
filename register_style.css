@@ -1,0 +1,70 @@
+
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('backgroundpic.png');
+    background-size: 100% 100%, cover; 
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+form{
+margin-top: -10px;
+}
+.slide {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  max-width: 500px;
+}
+.slide.active {
+  display: block;
+}
+.next-btn, .prev-btn, .submit-btn {
+  background-color:rgb(78, 76, 175);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.next-btn:hover, .prev-btn:hover, .submit-btn:hover {
+  background-color:rgb(49, 48, 105);
+}
+
+ h2{
+    color:rgb(26, 24, 31);
+    text-align: center;
+    display: block;
+}
+
+input, select, textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   width: 70%;
+    margin-block: 5px;
+    border-radius: 5px;
+    border:  0px ;
+    padding: 10px;
+    border:  solid lightgray 2px ;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+select{
+    width: 74%;
+}
+.next-btn{
+  float: right;
+  margin-right: 10px;
+  
+}
+p{
+    text-align: center;
+}
+
+label{
+margin-left: 40px;
+}

@@ -1,0 +1,75 @@
+
+HTML Code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="lofg">
+            <h2 style="margin-left: 20px;">Admin Panel</h2>
+        </div>
+        <div class="logout">
+            <img class="logoimg" src="profile.png.jpg" width="33" height="33" alt="Logo">
+            <a class="lo" href="logout.php">Logout</a>
+        </div>
+    </header>
+    <aside>
+        <div class="profile">
+            <img src="logo.png" alt="Profile Picture">
+            <span>BrightPath</span>
+        </div>
+        
+<nav>
+  <ul>
+      <div class="manage">
+          <h4>Manage accounts</h4>
+          <div style=" background-color: rgb(226, 226, 226);" class="twosub">
+
+            <li class="submenu <?php if ($currentPage == 'admin') echo 'active'; ?>">
+              <a class="ad" href="manage_account_admin.php">Admin</a>
+          </li>
+          <li class="submenu <?php if ($currentPage == 'users') echo 'active'; ?>">
+              <a href="manage_account_user.php">Users</a>
+          </li>
+          </div>
+     <div  class="mes" >
+
+      <li <?php if ($currentPage == 'messages') echo 'class="active"'; ?>>
+        <a href="messages.php">Messages</a>
+    </li>
+  </li>
+  <li <?php if ($currentPage == 'saved') echo 'class="active"'; ?>>
+      <a href="saved.php">Scloarships</a>
+  </li>
+  
+  <li <?php if ($currentPage == 'saved') echo 'class="active"'; ?>>
+    <a href="saved.php">Applications</a>
+</li>
+    <li <?php if ($currentPage == 'announcement') echo 'class="active"'; ?>>
+        <a href="announcement.php">Announcement</a>
+    </li>
+    <li <?php if ($currentPage == 'help_faqs') echo 'class="active"'; ?>>
+        <a href="help_faqs.php">Help & FAQs</a>
+    
+    <li <?php if ($currentPage == 'settings') echo 'class="active"'; ?>>
+        <a href="settings.php">Settings</a>
+    </li>
+     </div>
+    </div>
+  </ul>
+</nav>
+
+
+
+        
+    </aside>
+    <main>
+    </main>
+</body>
+</html>
