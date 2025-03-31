@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="Screenshot 2025-03-21 001353.png" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="user-name">Admin User</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li data-page="dashboard" class="nav-item active">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </li>
+                    <li data-page="accounts" class="nav-item">
+                        <i class="fas fa-users"></i> Manage Accounts
+                    </li>
+                    <li data-page="applications" class="nav-item">
+                        <i class="fas fa-file-alt"></i> Manage Applications
+                    </li>
+                    <li data-page="scholarships" class="nav-item">
+                        <i class="fas fa-graduation-cap"></i> Manage Scholarships
+                    </li>
+                    <li data-page="settings" class="nav-item">
+                        <i class="fas fa-cog"></i> Settings
+                    </li>
+                    <li data-page="profile" class="nav-item">
+                        <i class="fas fa-user"></i> Profile
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div id="dashboard" class="page active-page">
+                <h2>Dashboard</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-title">Total Applications</div>
+                        <div class="stat-value" id="total-applications">120</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">Approved Applications</div>
+                        <div class="stat-value" id="approved-applications">80</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">Pending Applications</div>
+                        <div class="stat-value" id="pending-applications">40</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="accounts" class="page">
+                <h2>Manage Accounts</h2>
+                <button class="add-btn" id="add-account-btn">Add Account</button>
+                <div class="data-table">
+                    <table id="accounts-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>user1</td>
+                                <td>user1@example.com</td>
+                                <td>Student</td>
+                                <td><button class="action-btn">Edit</button> <button class="action-btn">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin1</td>
+                                <td>admin1@example.com</td>
+                                <td>Admin</td>
+                                <td><button class="action-btn">Edit</button> <button class="action-btn">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="applications" class="page">
+                <h2>Manage Applications</h2>
+                <div class="data-table">
+                    <table id="applications-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Student</th>
+                                <th>Scholarship</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>Merit Scholarship</td>
+                                <td>Pending</td>
+                                <td><button class="action-btn">View</button> <button class="action-btn">Approve</button> <button
+                                        class="action-btn">Reject</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>Need-Based Scholarship</td>
+                                <td>Approved</td>
+                                <td><button class="action-btn">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="scholarships" class="page">
+                <h2>Manage Scholarships</h2>
+                <button class="add-btn" id="add-scholarship-btn">Add Scholarship</button>
+                <div class="data-table">
+                    <table id="scholarships-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Deadline</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Merit Scholarship</td>
+                                <td>2024-12-31</td>
+                                <td>$1000</td>
+                                <td><button class="action-btn">Edit</button> <button class="action-btn">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Need-Based Scholarship</td>
+                                <td>2024-11-15</td>
+                                <td>$500</td>
+                                <td><button class="action-btn">Edit</button> <button class="action-btn">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="settings" class="page">
+                <h2>All Enquiries</h2>
+                <div id="settings-content">
+                    </div>
+            </div>
+
+            <div id="profile" class="page">
+                <h2>Profile</h2>
+                <div class="profile-card">
+                    <img src="Screenshot 2025-03-21 001353.png" alt="Profile Picture" class="profile-picture">
+                    <div class="profile-details">
+                        <div class="profile-name">Admin User</div>
+                        <div class="profile-email">admin@example.com</div>
+                        <div class="profile-role">Administrator</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
