@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Portal</title>
+    <link rel="stylesheet" href="dsh.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <aside id="sidebar-container">
+        <div class="sidebar">
+             <div class="profile">
+                 <div class="profile-image">
+                     <img src="placeholder-avatar.png" alt="User Profile" id="sidebar-avatar-preview">
+                 </div>
+                 <span>UserName</span>
+             </div>
+
+             <div class="menu-group">
+                 <h3>General</h3>
+                 <a href="#" class="menu-item" id="link-dashboard">
+                     <i class="fa-solid fa-magnifying-glass fa-fw"></i> <span>Scholarships</span>
+                 </a>
+                 <a href="#" class="menu-item" id="link-notifications">
+                     <i class="fa-solid fa-bell fa-fw"></i> <span>Notifications</span>
+                 </a>
+             </div>
+
+              <div class="menu-group">
+                 <h3>Personal Center</h3>
+                 <a href="#" class="menu-item" id="link-profile">
+                     <i class="fa-solid fa-user-pen fa-fw"></i> <span>My Profile</span>
+                 </a>
+                 <a href="#" class="menu-item" id="link-documents">
+                     <i class="fa-solid fa-folder fa-fw"></i> <span>Documents</span>
+                 </a>
+                 <a href="#" class="menu-item" id="link-pathhub">
+                     <i class="fa-solid fa-map-signs fa-fw"></i> <span>Path Hub</span>
+                 </a>
+                 <a href="#" class="menu-item" id="link-saved">
+                     <i class="fa-solid fa-thumbtack fa-fw"></i> <span>Saved</span>
+                 </a>
+             </div>
+
+             <a href="#" class="menu-item logout" id="link-logout">
+                 <i class="fa-solid fa-right-from-bracket fa-fw"></i> <span>Logout</span>
+             </a>
+        </div>
+    </aside>
+
+    <main id="main-content-area">
+        <div id="dashboard-view" class="content-view active-view">
+            <div class="header">
+                 <div class="search-bar">
+                     <input type="text" placeholder="Search...">
+                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> </div>
+                 <div class="utility-icons">
+                     <i class="fa-solid fa-cog"></i> <i class="fa-solid fa-ellipsis-h"></i> </div>
+             </div>
+             <div class="dashboard-cards">
+                <div class="card">
+                    <div class="program-title">Provincial Scholarship Program</div>
+                    <img src="placeholder-scholarship1.jpg" alt="Provincial Scholarship">
+                    <div class="available-slots">Available slots: 200</div>
+                    <div class="progress-bar"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                    <div class="progress-text">80% filled</div> <div class="card-actions">
+                        <button><i class="fa-regular fa-bookmark fa-fw"></i> Saved</button> <button class="view-details-btn" data-scholarship-id="provincial"><i class="fa-solid fa-eye fa-fw"></i> View</button> <span class="status-active">Status: Active</span> </div>
+                </div>
+                <div class="card alcala-card">
+                    <div class="program-title">Alcala Scholarship Program</div>
+                     <img src="placeholder-alcala-logo.png" alt="Alcala Logo" class="alcala-logo">
+                     <div class="alcala-details">MUNICIPALITY OF ALCALA <br> ... (rest of the text) ... </div>
+                     <img src="placeholder-qr.png" alt="Scan to Register" class="qr-code">
+                     <div class="card-actions">
+                          <button class="view-details-btn" data-scholarship-id="alcala"><i class="fa-solid fa-eye fa-fw"></i> View</button> </div>
+                     <div class="card-status">Closed</div> </div>
+                 <div class="card image-card"> <img src="placeholder-image.jpg" alt="Placeholder Image">
+                 </div>
+             </div>
+            </div>
+
+        <div id="details-view" class="content-view">
+            <div class="scholarship-details-container">
+                <div class="scholarship-info">
+                     <img src="placeholder-scholarship-detail.jpg" alt="Scholarship Image" class="scholarship-image">
+                     <div class="scholarship-meta">
+                         <strong>Status:</strong> Open<br>
+                         <strong>Slots Available:</strong> 24/30<br>
+                         <strong>Category:</strong> Government Scholarship
+                     </div>
+                     <div class="description-box">
+                     </div>
+                </div>
+                 <div class="details-sidebar">
+                      <button><i class="fa-solid fa-list-check fa-fw"></i> Requirements</button> <button><i class="fa-solid fa-filter fa-fw"></i> Selection Criteria</button>
+                      <button><i class="fa-solid fa-graduation-cap fa-fw"></i> Education Details</button>
+                      <button><i class="fa-solid fa-hand-holding-dollar fa-fw"></i> Financial Assistance</button>
+                      <button><i class="fa-solid fa-clipboard-check fa-fw"></i> Maintaining Requirements</button>
+                      <button><i class="fa-solid fa-link-slash fa-fw"></i> Effects for other grants</button>
+                      <button><i class="fa-solid fa-ban fa-fw"></i> Forfeiture of benefit</button>
+                      <button><i class="fa-solid fa-sticky-note fa-fw"></i> Note for submission</button>
+                      <div class="apply-button-container">
+                           <button class="apply-now-btn"><i class="fa-solid fa-pen-to-square fa-fw"></i> Apply Now</button> </div>
+                 </div>
+            </div>
+            </div>
+
+        <div id="form-view" class="content-view">
+             <h2>Applying To: <span id="applying-to-title">Scholarship Program</span></h2>
+             <div class="tabs">
+                 <button class="tab-button active" data-tab-target="#personal-info-section">
+                     <i class="fa-solid fa-user fa-fw"></i> Personal Information </button>
+                 <button class="tab-button" data-tab-target="#requirements-section">
+                     <i class="fa-solid fa-file-lines fa-fw"></i> Requirements </button>
+                 <button class="tab-button" data-tab-target="#questions-section">
+                     <i class="fa-solid fa-circle-question fa-fw"></i> Questions </button>
+             </div>
+
+             <form class="form-section">
+                 <div id="personal-info-section" class="tab-content active-tab-content">
+                     <div class="form-body">
+                          <div class="profile-picture-section">
+                              <label for="avatar-upload-input"> <img src="placeholder-profile.png" alt="Profile Picture Placeholder" id="main-profile-pic">
+                                 <span style="font-size: 0.8em; color: #666; display: block; margin-top: 5px;">Click to upload</span>
+                              </label>
+                              <input type="file" id="avatar-upload-input" accept="image/*" style="display: none;"> </div>
+                          <div class="fields-container">
+                              <div class="field-row">
+                                  <div class="field-group">
+                                      <label for="first-name">First Name</label>
+                                      <input type="text" id="first-name">
+                                  </div>
+                                   <div class="field-group">
+                                      <label for="middle-name">Middle Name</label>
+                                      <input type="text" id="middle-name">
+                                  </div>
+                                   <div class="field-group">
+                                      <label for="last-name">Last Name</label>
+                                      <input type="text" id="last-name">
+                                  </div>
+                               </div>
+                               <div class="field-row">
+                                  <div class="field-group small">
+                                      <label for="age">Age</label>
+                                      <input type="text" id="age">
+                                  </div>
+                                   <div class="field-group small">
+                                        <label for="gender">Gender</label>
+                                        <select id="gender">
+                                            <option value="">Select...</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                            <option value="prefer_not_say">Prefer not to say</option>
+                                        </select>
+                                   </div>
+                                   <div class="field-group">
+                                        <label for="nationality">Nationality</label>
+                                        <input type="text" id="nationality">
+                                   </div>
+                                   <div class="field-group">
+                                      <label for="birth-date">Birth Date</label>
+                                      <input type="date" id="birth-date">
+                                   </div>
+                                   <div class="field-group">
+                                      <label for="civil-status">Civil Status</label>
+                                      <select id="civil-status">
+                                         <option value="">Select...</option>
+                                         <option value="single">Single</option>
+                                         <option value="married">Married</option>
+                                         <option value="divorced">Divorced</option>
+                                         <option value="widowed">Widowed</option>
+                                     </select>
+                                  </div>
+                               </div>
+                               <div class="field-row">
+                                    <div class="field-group full-width">
+                                        <label for="current-address">Current Address: Street/ Barangay/ Municipality/ Province</label>
+                                        <input type="text" id="current-address">
+                                    </div>
+                                </div>
+                          </div>
+                     </div>
+                      <div class="additional-fields">
+                           <div class="field-group">
+                              <label for="course">Course:</label>
+                              <input type="text" id="course">
+                          </div>
+                           <div class="field-group">
+                              <label for="year-level">Year/Grade Level:</label>
+                              <input type="text" id="year-level">
+                          </div>
+                           <div class="field-group">
+                              <label for="school">School:</label>
+                              <input type="text" id="school">
+                          </div>
+                          <div class="field-group">
+                              <label for="school-address">School Address:</label>
+                              <input type="text" id="school-address">
+                          </div>
+                      </div>
+                 </div>
+
+                 <div id="requirements-section" class="tab-content">
+                     <h4>Upload Required Documents</h4>
+                     <p>Please upload clear copies of the following documents:</p>
+                     <ul>
+                        <li>Document 1 (e.g., Report Card / Transcript)</li>
+                        <li>Document 2 (e.g., Proof of Income)</li>
+                        <li>Document 3 (e.g., Certificate of Residency)</li>
+                     </ul>
+                     <div class="field-group">
+                         <label for="doc1">Document 1 Upload:</label>
+                         <input type="file" id="doc1">
+                     </div>
+                      <div class="field-group">
+                         <label for="doc2">Document 2 Upload:</label>
+                         <input type="file" id="doc2">
+                     </div>
+                     </div>
+
+                 <div id="questions-section" class="tab-content">
+                     <h4>Answer the Following Questions</h4>
+                      <div class="field-group full-width">
+                         <label for="question1">Question 1: Why do you deserve this scholarship?</label>
+                         <textarea id="question1" rows="4"></textarea>
+                     </div>
+                      <div class="field-group full-width">
+                         <label for="question2">Question 2: Describe your future goals.</label>
+                         <textarea id="question2" rows="4"></textarea>
+                     </div>
+                     </div>
+                 <div class="form-footer">
+                      <button type="button" class="next-button">Next <i class="fa-solid fa-arrow-right"></i></button> </div>
+             </form>
+             </div>
+
+    </main>
+
+    <script src="dash.js" defer></script> </body>
+</html>
