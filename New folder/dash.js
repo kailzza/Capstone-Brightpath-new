@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-   
+
     const sidebarContainer = document.getElementById('sidebar-container');
     const mainContentArea = document.getElementById('main-content-area');
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formView = document.getElementById('form-view');
     const allViews = [dashboardView, detailsView, formView];
 
-    
+
     const dashboardLink = document.getElementById('link-dashboard');
     const notificationsLink = document.getElementById('link-notifications');
     const profileLink = document.getElementById('link-profile');
@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const formTabContents = formView.querySelectorAll('.tab-content');
     const applyingToTitle = formView.querySelector('#applying-to-title');
     const avatarInput = formView.querySelector('#avatar-upload-input');
-    const avatarPreview = formView.querySelector('#main-profile-pic'); 
-    const sidebarAvatarPreview = sidebarContainer.querySelector('#sidebar-avatar-preview'); 
+    const avatarPreview = formView.querySelector('#main-profile-pic');
+    const sidebarAvatarPreview = sidebarContainer.querySelector('#sidebar-avatar-preview');
 
 
     function showView(viewToShow) {
@@ -49,10 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
          profileLink.addEventListener('click', (e) => {
              e.preventDefault();
              console.log("My Profile clicked - View not implemented yet");
-              
+
          });
      }
-    
 
 
 
@@ -62,16 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const scholarshipId = event.target.getAttribute('data-scholarship-id');
             console.log(`Viewing details for: ${scholarshipId}`);
-          
+
             showView(detailsView);
-            
+
         }
 
-      
+
         else if (event.target.matches('.apply-now-btn')) {
             event.preventDefault();
             console.log("Apply Now clicked");
-            
+
             const programTitle = detailsView.querySelector('.scholarship-info .scholarship-meta strong') ? detailsView.querySelector('.scholarship-info .scholarship-meta strong').parentNode.textContent.split('\n')[0].replace('Status: ','') : "Selected Scholarship"; // Simple way to grab title
             if(applyingToTitle) applyingToTitle.textContent = programTitle;
 
@@ -79,13 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(formTabsContainer) handleTabClick(formTabsContainer.querySelector('.tab-button'));
         }
 
-       
+
         else if (event.target.matches('.tab-button')) {
             event.preventDefault();
             handleTabClick(event.target);
         }
 
-        
+
          else if (event.target.matches('.next-button')) {
              event.preventDefault();
              console.log("Next button clicked");
@@ -95,23 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
                    handleTabClick(nextTab);
                } else {
                    console.log("End of form or submit logic needed.");
-                  
+
                }
          }
     });
 
-  
 
-    
+
+
     function handleTabClick(clickedButton) {
         if (!clickedButton) return;
-         
+
         formTabsContainer.querySelectorAll('.tab-button').forEach(button => {
             button.classList.remove('active');
         });
         clickedButton.classList.add('active');
 
-        
+
         const targetSelector = clickedButton.getAttribute('data-tab-target');
         formTabContents.forEach(content => {
             if (`#${content.id}` === targetSelector) {
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   
+
      if (avatarInput && avatarPreview && sidebarAvatarPreview) {
          avatarInput.addEventListener('change', event => {
              const file = event.target.files[0];
@@ -131,23 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
                  reader.onload = (e) => {
                      const imageUrl = e.target.result;
                      avatarPreview.src = imageUrl;
-                     sidebarAvatarPreview.src = imageUrl; 
+                     sidebarAvatarPreview.src = imageUrl;
                  }
                  reader.readAsDataURL(file);
              } else {
-                 
-                 const placeholder = 'placeholder-profile.png'; 
+
+                 const placeholder = 'placeholder-profile.png';
                  avatarPreview.src = placeholder;
-                 sidebarAvatarPreview.src = placeholder; 
+                 sidebarAvatarPreview.src = placeholder;
              }
          });
      }
 
 
-   
-    showView(dashboardView); 
-    
+
+    showView(dashboardView);
+
     if(formTabsContainer) handleTabClick(formTabsContainer.querySelector('.tab-button'));
 
 
-}); 
+});

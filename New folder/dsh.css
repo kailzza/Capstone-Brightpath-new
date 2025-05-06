@@ -12,7 +12,18 @@ body {
     display: flex;
     min-height: 100vh;
 }
+#dashboard-view .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+#dashboard-view .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 #sidebar-container {
     width: 250px;
     flex-shrink: 0;
@@ -264,7 +275,7 @@ button {
 }
 
 #dashboard-view .progress-bar-fill {
-    background-color: #8bc34a;
+    background-color: #48de03;
     height: 100%;
 
     border-radius: 5px;
@@ -310,6 +321,7 @@ button {
     font-weight: 500;
 }
 #dashboard-view .card-actions span.status-active { color: #2e7d32; }
+#dashboard-view .card-actions span.status-paused { color: #d5bb13; }
 #dashboard-view .card-actions span.status-closed { color: #c62828; }
 
 
