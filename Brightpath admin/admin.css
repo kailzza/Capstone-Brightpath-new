@@ -1,0 +1,289 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar and other styles remain the same */
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #f9f9f9;
+    color: #333;
+    width: 250px;
+    padding: 20px;
+    height: 100vh;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.nav-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-item.active {
+    background-color: #e0e0e0;
+}
+
+.nav-item:hover {
+    background-color: #f0f0f0;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.page {
+    display: none;
+}
+
+.active-page {
+    display: block;
+}
+
+.dashboard-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.stat-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 1.2em;
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+}
+
+.add-btn,
+.action-btn,
+.save-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    background-color: #6c757d;
+    margin: 3px;
+}
+
+.settings-form label,
+.settings-form input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-email,
+.profile-role {
+    color: #666;
+    margin-bottom: 3px;
+}
+
+
+.enquiries-container {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.enquiries-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+
+.enquiries-filters {
+    display: flex;
+    align-items: center;
+}
+
+.enquiries-filters input,
+.enquiries-filters select {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.enquiries-filters button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-button {
+    background-color: #6c757d;
+    /* Grey-blue */
+    color: white;
+}
+
+.reset-button {
+    background-color: #dc3545;
+    /* Red */
+    color: white;
+}
+
+.enquiries-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.enquiries-table th,
+.enquiries-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.enquiries-table th {
+    background-color: #f2f2f2;
+}
+
+.status-completed {
+    background-color: #28a745;
+    /* Green */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.status-pending {
+    background-color: #c50101;
+    /* Purple */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.view-button {
+    background-color: #17a2b8;
+    /* Cyan */
+    color: white;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    /* Red */
+    color: white;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
